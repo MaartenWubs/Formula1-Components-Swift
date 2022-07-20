@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32390F7C2888998E0021B2CC /* F1ActivityIndicatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32390F7B2888998E0021B2CC /* F1ActivityIndicatorState.swift */; };
 		327D84B52888906000AE13E5 /* Formula1_Components_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327D84B42888906000AE13E5 /* Formula1_Components_SwiftTests.swift */; };
 		327D84B62888906000AE13E5 /* Formula1_Components_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A04C7928888EB8008CB670 /* Formula1_Components_Swift.framework */; };
 		327D84BC2888906500AE13E5 /* F1MathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04CD228888EDE008CB670 /* F1MathTests.swift */; };
@@ -100,6 +101,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32390F7B2888998E0021B2CC /* F1ActivityIndicatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1ActivityIndicatorState.swift; sourceTree = "<group>"; };
 		327D84B22888906000AE13E5 /* Formula1_Components_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Formula1_Components_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		327D84B42888906000AE13E5 /* Formula1_Components_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula1_Components_SwiftTests.swift; sourceTree = "<group>"; };
 		32A04C7928888EB8008CB670 /* Formula1_Components_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Formula1_Components_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +207,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32390F7A288899810021B2CC /* private */ = {
+			isa = PBXGroup;
+			children = (
+				32390F7B2888998E0021B2CC /* F1ActivityIndicatorState.swift */,
+			);
+			path = private;
+			sourceTree = "<group>";
+		};
 		327D84B32888906000AE13E5 /* Formula1_Components_SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +778,7 @@
 		32A04CE428888EDE008CB670 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				32390F7A288899810021B2CC /* private */,
 				32A04CE528888EDE008CB670 /* F1ActivityIndicatorDelegate.swift */,
 				32A04CE628888EDE008CB670 /* F1ActivityIndicator.swift */,
 			);
@@ -1331,6 +1342,7 @@
 				32A04D5028888EDE008CB670 /* UIColor+Formula1Blending.swift in Sources */,
 				32A04D5B28888EDE008CB670 /* F1ActivityIndicator.swift in Sources */,
 				32A04D7B28888EDE008CB670 /* F1ProgressView.swift in Sources */,
+				32390F7C2888998E0021B2CC /* F1ActivityIndicatorState.swift in Sources */,
 				32A04D6F28888EDE008CB670 /* F1PageControl.swift in Sources */,
 				32A04D4928888EDE008CB670 /* F1RipplePendingAnimation.swift in Sources */,
 				32A04D3828888EDE008CB670 /* F1CollectionVieCell.swift in Sources */,

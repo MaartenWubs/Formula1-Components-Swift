@@ -66,6 +66,7 @@ public class F1ActivityIndicator: UIView {
     var _animationInProgress = false
     var _bacgrounded = false
     var _cycleInProgress = false
+    var _animating = false
     var currentProgress: CGFloat = 0.0
     var _lastProgress: CGFloat = 0.0
     let _animator = MotionAnimator()
@@ -90,12 +91,26 @@ public class F1ActivityIndicator: UIView {
     // MARK: UIView
     
     public override func willMove(toWindow newWindow: UIWindow?) {
-        if let newWindow {
+        if let _ = newWindow {
             
-        } else {
+        } else if _animating && !_bacgrounded {
             
         }
     }
+    
+    public override var intrinsicContentSize: CGSize {
+        return CGSize.zero
+    }
+    
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize.zero
+    }
+    
+    func setHidden(_ hidden: Bool) {
+        
+    }
+    
+    // MARK: Public methods
     
     /// Starts the animated activity indicator. Does nothing if the spinner is already animating.
     public func startAnimating() {}
@@ -130,6 +145,65 @@ public class F1ActivityIndicator: UIView {
     // MARK: - Private methods
     
     func registerForegroundAndBackgroundNotificationObserversIfNeeded() {}
+    
+    func controlAnimatingOnForegroundChange(_ notification: Notification) {}
+    
+    func actuallyStartAnimating() {}
+    
+    func actuallyStopAnimating() {}
+    
+    func setCycleColors(_ color: [UIColor]) {}
+    
+    func addStopAnimation() {}
+    
+    func updateStrokePath() {}
+    
+    func updateStrokeColor() {}
+    
+    func addStrokeRotationCycle() {}
+    
+    func addTransitionToIndeterminateCycle() {}
+    
+    func addTransitionToDeterminateCycle() {}
+    
+    func addProgressAnimation() {}
+    
+    func setDeterminateProgressWithoutAnimation() {}
+    
+    func strokeRotationCycle(from state: F1ActivityIndicatorState) {}
+    
+    func addProgressAnimationIfRequired() {}
+    
+    func normalizedRotation(for cycle: Int) -> CGFloat { return 0.0 }
+    
+    func animateOut() {}
+    
+    func removeAnimations() {}
+    
+    func defaultHeight() -> CGFloat { return 0.0 }
+    
+    func defaultCycleColors() -> [UIColor] { return [.clear] }
+    
+    func applyPropertiesWithoutAnimation(_ setProp: () -> Void) {}
+    
+    // MARK: - Accessibility
+    
+    public override var isAccessibilityElement: Bool {
+        get {
+            return true
+        } set {
+            
+        }
+    }
+    
+    func defaultAccessibilityLabel() -> String { return "" }
+    
+    func accessibilityValue() -> String { return "" }
+    
+    public override class func accessibilityTraits() -> UIAccessibilityTraits { return .adjustable }
+    
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {}
+    
 }
 
 public typealias F1ActivityIndicatorAnimation = (_ strokeStart: CGFloat,
