@@ -35,6 +35,8 @@ public enum F1ProgressViewBackwardsAnimationMode {
 @IBDesignable
 public class F1ProgressView: UIView {
     
+    // MARK: - Public properties
+    
     /// The color shown fo the portion of the progress view that is filled.
     public var progressTintColor: UIColor?
     
@@ -83,4 +85,27 @@ public class F1ProgressView: UIView {
     /// When animating progress which is lower than the current progress value, this mode
     /// will determine which animation to use. The default is `F1ProgressViewBackwardsAnimationMode.reset`.
     public var backwardProgressAnimationmode: F1ProgressViewBackwardsAnimationMode = .reset
+    
+    // MARK: - Public Methods
+    
+    /// Adjusts the current progress, optionally animating the change.
+    ///
+    /// - Parameter progress: The progress to set.
+    /// - Parameter animated: Whether the change should be animated.
+    /// - Parameter completion: The completion executes at the end of the animation.
+    public func setProgress(_ progress: Float, animated: Bool, completion: @escaping () -> Void) {}
+    
+    /// Changes the hidden state, optionally animating the change.
+    ///
+    /// - Parameter hidden: The hidden state to set.
+    /// - Parameter animated: Whether the change should be animated.
+    /// - Parameter completion: The completion executes at the end of the animation.
+    public func setHidden(_ hidden: Bool, animated: Bool, completion: @escaping () -> Void) {}
+    
+    /// Start the progress bar's indeterminate animation.
+    public func startAnimating() {}
+    
+    /// Stop the progress bar's indeterminate animation.
+    public func stopAnimating() {}
+    
 }
