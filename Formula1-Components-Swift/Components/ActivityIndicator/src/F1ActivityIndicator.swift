@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MotionAnimator
 
 //TODO: [f1a210h5] build activity indicator.
 
@@ -67,6 +68,7 @@ public class F1ActivityIndicator: UIView {
     var _cycleInProgress = false
     var currentProgress: CGFloat = 0.0
     var _lastProgress: CGFloat = 0.0
+    let _animator = MotionAnimator()
     
     // MARK: - Init
     public override init(frame: CGRect) {

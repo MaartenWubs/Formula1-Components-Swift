@@ -54,7 +54,7 @@ public class F1RippleLayer: CAShapeLayer {
         super.setNeedsLayout()
         
         self.calculateRadiusAndSetPath()
-        self.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds))
+        self.position = CGPoint.init(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds))
     }
     
     func calculateRadiusAndSetPath() {
@@ -62,7 +62,7 @@ public class F1RippleLayer: CAShapeLayer {
     }
     
     func setPathFromRadii(_ radius: CGFloat) {
-        let ovalRect: CGRect = CGRectMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds), radius * 2, radius * 2)
+        let ovalRect: CGRect = CGRect.init(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds), radius * 2, radius * 2)
         let circlePath = UIBezierPath(ovalIn: ovalRect)
         self.path = circlePath.cgPath
     }
@@ -81,7 +81,7 @@ public class F1RippleLayer: CAShapeLayer {
         let finalRadius: CGFloat = self.calculateRadius()
         setPathFromRadii(finalRadius)
         self.opacity = 1
-        self.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds))
+        self.position = CGPoint.init(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds))
         if animated {
             completion()
             rippleLayerDelegate?.rippleLayerTouchDownAnimationDidEnd(self)
@@ -97,7 +97,7 @@ public class F1RippleLayer: CAShapeLayer {
             
             let centerPath = UIBezierPath()
             let startPoint = point
-            let endPoint = CGPointMake(CGRectGetMidY(self.bounds), CGRectGetMidY(self.bounds))
+            let endPoint = CGPoint.init(CGRectGetMidY(self.bounds), CGRectGetMidY(self.bounds))
             centerPath.move(to: startPoint)
             centerPath.addLine(to: endPoint)
             centerPath.close()

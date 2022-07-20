@@ -78,14 +78,14 @@ public func F1AlignRect(_ rect: CGRect, toScale scale: CGFloat) -> CGRect {
         return CGRectIntegral(rect)
     }
     
-    let originalMinimumPoint: CGPoint = CGPointMake(CGRectGetMinX(rect),
+    let originalMinimumPoint: CGPoint = CGPoint.init(CGRectGetMinX(rect),
                                                     CGRectGetMinY(rect))
-    let newOrigin: CGPoint = CGPointMake(floor(originalMinimumPoint.x * internalScale) / internalScale,
+    let newOrigin: CGPoint = CGPoint.init(floor(originalMinimumPoint.x * internalScale) / internalScale,
                                          floor(originalMinimumPoint.y * internalScale) / internalScale)
     
     let adjustWidthHeight: CGSize = CGSizeMake(originalMinimumPoint.x - newOrigin.x,
                                                originalMinimumPoint.y - newOrigin.y)
-    return CGRectMake(newOrigin.x,
+    return CGRect.init(newOrigin.x,
                       newOrigin.y,
                       ceil((CGRectGetWidth(rect) + adjustWidthHeight.width) * internalScale) / internalScale,
                       ceil((CGRectGetHeight(rect) + adjustWidthHeight.height) * internalScale) / internalScale)
@@ -95,7 +95,7 @@ public func F1RoundPoint(_ point: CGPoint, withScale scale: CGFloat) -> CGPoint 
     if F1CGFloatEquals(scale, 0) {
         return CGPointZero
     }
-    return CGPointMake(round(point.x * scale) / scale,
+    return CGPoint.init(round(point.x * scale) / scale,
                        round(point.y * scale) / scale)
 }
 
@@ -132,10 +132,10 @@ public func F1RoundCenter(_ center: CGPoint,
     
     let halfWidth: CGFloat = CGRectGetWidth(bounds) / 2
     let halfHeight: CGFloat = CGRectGetHeight(bounds) / 2
-    var origin: CGPoint = CGPointMake(center.x - halfWidth,
+    var origin: CGPoint = CGPoint.init(center.x - halfWidth,
                                       center.y - halfHeight)
     origin = F1RoundPoint(origin, withScale: scale)
-    return CGPointMake(origin.x + halfWidth, origin.y + halfHeight)
+    return CGPoint.init(origin.x + halfWidth, origin.y + halfHeight)
 }
 
 /// Compare two edge insets using `F1CGFloatEquals`.

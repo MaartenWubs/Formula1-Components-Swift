@@ -69,124 +69,120 @@ final class F1MathTests: XCTestCase {
     // MARK: - F1Rect
     
     func testF1AlignRectScale() {
-        let misalignedRect: CGRect = CGRectMake(0.45, 0.78, 1.01, 5.98)
-        let alignedScale1Rect: CGRect = CGRectMake(0, 0, 2, 7)
-        let alignedScale2Rect: CGRect = CGRectMake(0, 0.5, 1.5, 6.5)
-        let alignedScale3Rect: CGRect = CGRectMake((1.0 / 3.0), (2.0 / 3.0), (4.0 / 3.0), (19.0 / 3.0))
+        let misalignedRect: CGRect = CGRect.init(x: 0.45, y: 0.78, width: 1.01, height: 5.98)
+        let alignedScale1Rect: CGRect = CGRect.init(x: 0, y: 0, width: 2, height: 7)
+        let alignedScale2Rect: CGRect = CGRect.init(x: 0, y: 0.5, width: 1.5, height: 6.5)
+        let alignedScale3Rect: CGRect = CGRect.init(x: (1.0 / 3.0), y: (2.0 / 3.0), width: (4.0 / 3.0), height: (19.0 / 3.0))
         
         let outputScale1Rect: CGRect = F1AlignRect(misalignedRect, toScale: 1)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale1Rect, outputScale1Rect))
-        XCTAssertTrue(CGRectContainsRect(outputScale1Rect, misalignedRect))
+        XCTAssertTrue(alignedScale1Rect.equalTo(outputScale1Rect))
+        XCTAssertTrue(outputScale1Rect.contains(misalignedRect))
         
         let outputScale2Rect: CGRect = F1AlignRect(misalignedRect, toScale: 2)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale2Rect, outputScale2Rect))
-        XCTAssertTrue(CGRectContainsRect(outputScale2Rect, misalignedRect))
+        XCTAssertTrue(alignedScale2Rect.equalTo(outputScale2Rect))
+        XCTAssertTrue(outputScale2Rect.contains(misalignedRect))
         
         let outputScale3Rect: CGRect = F1AlignRect(misalignedRect, toScale: 3)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale3Rect, outputScale3Rect))
-        XCTAssertTrue(CGRectContainsRect(outputScale3Rect, misalignedRect))
+        XCTAssertTrue(alignedScale3Rect.equalTo(outputScale3Rect))
+        XCTAssertTrue(outputScale3Rect.contains(misalignedRect))
     }
     
     func testF1AlignRectScaleNegative() {
-        let misalignedRect = CGRectMake(-5.01, -0.399, 8.35, 2.65)
-        let alignedScale1Rect = CGRectMake(-6, -1, 10, 4)
-        let alignedScale2Rect = CGRectMake(-5.5, -0.5, 9, 3)
-        let alignedScale3Rect = CGRectMake((-16.0 / 3.0), (-2.0 / 3.0), 9, 3)
+        let misalignedRect = CGRect.init(x: -5.01, y: -0.399, width: 8.35, height: 2.65)
+        let alignedScale1Rect = CGRect.init(x: -6, y: -1, width: 10, height: 4)
+        let alignedScale2Rect = CGRect.init(x: -5.5, y: -0.5, width: 9, height: 3)
+        let alignedScale3Rect = CGRect.init(x: (-16.0 / 3.0), y: (-2.0 / 3.0), width: 9, height: 3)
         
         let outputScale1Rect = F1AlignRect(misalignedRect, toScale: 1)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale1Rect, outputScale1Rect))
-        XCTAssertTrue(CGRectContainsRect(outputScale1Rect, misalignedRect))
+        XCTAssertTrue(alignedScale1Rect.equalTo(outputScale1Rect))
+        XCTAssertTrue(outputScale1Rect.contains(misalignedRect))
         
         let outputScale2Rect = F1AlignRect(misalignedRect, toScale: 2)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale2Rect, outputScale2Rect))
-        XCTAssertTrue(CGRectContainsRect(outputScale2Rect, misalignedRect))
+        XCTAssertTrue(alignedScale2Rect.equalTo(outputScale2Rect))
+        XCTAssertTrue(outputScale2Rect.contains(misalignedRect))
         
         let outputScale3Rect = F1AlignRect(misalignedRect, toScale: 3)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale3Rect, outputScale3Rect))
-        XCTAssertTrue(CGRectContainsRect(outputScale3Rect, misalignedRect))
+        XCTAssertTrue(alignedScale3Rect.equalTo(outputScale3Rect))
+        XCTAssertTrue(outputScale3Rect.contains(misalignedRect))
     }
     
     func testF1AlignRectScaleNonStandard() {
-        let misalignedRect = CGRectMake(17.9, -4.44, -10.10, -15.85)
+        let misalignedRect = CGRect.init(x: 17.9, y: -4.44, width: -10.10, height: -15.85)
         
-        let alignedScale1Rect = CGRectMake(7, -21, 11, 17)
-        let alignedScale2Rect = CGRectMake(7.5, -20.5, 10.5, 16.5)
-        let alignedScale3Rect = CGRectMake((23.0 / 3.0), (-61.0 / 3.0), (31.0 / 3.0), 16)
+        let alignedScale1Rect = CGRect.init(x: 7, y: -21, width: 11, height: 17)
+        let alignedScale2Rect = CGRect.init(x: 7.5, y: -20.5, width: 10.5, height: 16.5)
+        let alignedScale3Rect = CGRect.init(x: (23.0 / 3.0), y: (-61.0 / 3.0), width: (31.0 / 3.0), height: 16)
         
         let outputScale1Rect = F1AlignRect(misalignedRect, toScale: 1)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale1Rect, outputScale1Rect))
-        XCTAssertTrue(CGRectContainsRect(outputScale1Rect, misalignedRect))
+        XCTAssertTrue(alignedScale1Rect.equalTo(outputScale1Rect))
+        XCTAssertTrue(outputScale1Rect.contains(misalignedRect))
         
         let outputScale2Rect = F1AlignRect(misalignedRect, toScale: 2)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale2Rect, outputScale2Rect))
-        XCTAssertTrue(CGRectContainsRect(outputScale2Rect, misalignedRect))
+        XCTAssertTrue(alignedScale2Rect.equalTo(outputScale2Rect))
+        XCTAssertTrue(outputScale2Rect.contains(misalignedRect))
         
         let outputScale3Rect = F1AlignRect(misalignedRect, toScale: 3)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale3Rect, outputScale3Rect))
-        XCTAssertTrue(CGRectContainsRect(outputScale3Rect, misalignedRect))
+        XCTAssertTrue(alignedScale3Rect.equalTo(outputScale3Rect))
+        XCTAssertTrue(outputScale3Rect.contains(misalignedRect))
     }
     
     func testF1AlignRectScaleIsAligned() {
-        let alignedScale1Rect = CGRectMake(10, 15, 5, 10)
-        let alignedScale2Rect = CGRectMake(10.5, 15.5, 5.5, 10.5)
-        let alignedScale3Rect = CGRectMake((31.0 / 3.0), (47.0 / 3.0),
-                                           (16.0 / 3.0), (32.0 / 3.0))
+        let alignedScale1Rect = CGRect.init(x: 10, y: 15, width: 5, height: 10)
+        let alignedScale2Rect = CGRect.init(x: 10.5, y: 15.5, width: 5.5, height: 10.5)
+        let alignedScale3Rect = CGRect.init(x: (31.0 / 3.0), y: (47.0 / 3.0),
+                                            width: (16.0 / 3.0), height: (32.0 / 3.0))
         
         let output1 = F1AlignRect(alignedScale1Rect, toScale: 1)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale1Rect, output1))
-        XCTAssertTrue(CGRectContainsRect(output1, alignedScale1Rect))
+        XCTAssertTrue(alignedScale1Rect.equalTo(output1))
+        XCTAssertTrue(output1.contains(alignedScale1Rect))
         
         let output2 = F1AlignRect(alignedScale2Rect, toScale: 2)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale2Rect, output2))
-        XCTAssertTrue(CGRectContainsRect(output2, alignedScale2Rect))
+        XCTAssertTrue(alignedScale2Rect.equalTo(output2))
+        XCTAssertTrue(output2.contains(alignedScale2Rect))
         
         let output3 = F1AlignRect(alignedScale3Rect, toScale: 3)
-        XCTAssertTrue(CGRectEqualToRect(alignedScale3Rect, output3))
-        XCTAssertTrue(CGRectContainsRect(output3, alignedScale3Rect))
+        XCTAssertTrue(alignedScale3Rect.equalTo(output3))
+        XCTAssertTrue(output3.contains(alignedScale3Rect))
     }
     
     func testF1AlignRectWithScaleNull() {
-        XCTAssertTrue(CGRectIsNull(F1AlignRect(CGRect.null, toScale: 1)))
-        XCTAssertTrue(CGRectIsNull(F1AlignRect(CGRect.null, toScale: 2)))
-        XCTAssertTrue(CGRectIsNull(F1AlignRect(CGRect.null, toScale: 3)))
+        XCTAssertTrue(F1AlignRect(CGRect.null, toScale: 1).isNull)
+        XCTAssertTrue(F1AlignRect(CGRect.null, toScale: 2).isNull)
+        XCTAssertTrue(F1AlignRect(CGRect.null, toScale: 3).isNull)
     }
     
     func testF1AlignRectWithScaleZero() {
-        let zeroRect = CGRectMake(1.1, 2.2, 3.3, 4.4)
-        XCTAssertTrue(CGRectEqualToRect(F1AlignRect(zeroRect, toScale: 0), F1AlignRect(zeroRect, toScale: 1)))
+        let zeroRect = CGRect.init(x: 1.1, y: 2.2, width: 3.3, height: 4.4)
+        XCTAssertTrue(F1AlignRect(zeroRect, toScale: 0).equalTo(F1AlignRect(zeroRect, toScale: 1)))
     }
     
     // MARK: - F1Point
     
     func testF1RoundPointWithScale() {
-        let misalignedPoint = CGPointMake(0.7, -1.3)
-        let alignedScale1 = CGPointMake(1, -1)
-        let alignedScale2 = CGPointMake(0.5, -1.5)
-        let alignedScale3 = CGPointMake((2.0 / 3.0), (-4.0 / 3.0))
+        let misalignedPoint = CGPoint.init(x: 0.7, y: -1.3)
+        let alignedScale1 = CGPoint.init(x: 1, y: -1)
+        let alignedScale2 = CGPoint.init(x: 0.5, y: -1.5)
+        let alignedScale3 = CGPoint.init(x: (2.0 / 3.0), y: (-4.0 / 3.0))
         
-        XCTAssertTrue(CGPointEqualToPoint(alignedScale1,
-                                          F1RoundPoint(misalignedPoint, withScale: 1)))
-        XCTAssertTrue(CGPointEqualToPoint(alignedScale2,
-                                          F1RoundPoint(misalignedPoint, withScale: 2)))
-        XCTAssertTrue(CGPointEqualToPoint(alignedScale3,
-                                          F1RoundPoint(misalignedPoint, withScale: 3)))
+        XCTAssertTrue(alignedScale1.equalTo(F1RoundPoint(misalignedPoint, withScale: 1)))
+        XCTAssertTrue(alignedScale2.equalTo(F1RoundPoint(misalignedPoint, withScale: 2)))
+        XCTAssertTrue(alignedScale3.equalTo(F1RoundPoint(misalignedPoint, withScale: 3)))
     }
     
     func testF1RoundPointWithScaleZero() {
-        XCTAssertTrue(CGPointEqualToPoint(CGPoint.zero,
-                                          F1RoundPoint(CGPointMake(5.5, 13),
+        XCTAssertTrue(CGPoint.zero.equalTo(F1RoundPoint(CGPoint.init(x: 5.5, y: 13),
                                                        withScale: 0)))
     }
     
     // MARK: - F1Center
     
     func testF1RoundCenterWithBoundsAndScale() {
-        let misalignedCenter = CGPointMake(0.7, -1.3)
-        let bounds = CGRectMake(0, 0, 20, 21)
+        let misalignedCenter = CGPoint.init(x: 0.7, y: -1.3)
+        let bounds = CGRect.init(x: 0, y: 0, width: 20, height: 21)
         
-        let alignedScale1Center = CGPointMake(1, -1.5)
-        let alignedScale2Center = CGPointMake(0.5, -1.5)
-        let alignedScale3Center = CGPointMake((2.0 / 3.0), (-7.0 / 6.0))
+        let alignedScale1Center = CGPoint.init(x: 1, y: -1.5)
+        let alignedScale2Center = CGPoint.init(x: 0.5, y: -1.5)
+        let alignedScale3Center = CGPoint.init(x: (2.0 / 3.0), y: (-7.0 / 6.0))
         
         let output1 = F1RoundCenter(misalignedCenter, withBounds: bounds, andScale: 1)
         XCTAssertTrue(F1CGFloatEquals(alignedScale1Center.x, output1.x))
@@ -203,12 +199,12 @@ final class F1MathTests: XCTestCase {
     
     func testF1RoundCenterWithBoundsAndScaleWithErrors() {
         let acceptableRoundingError: CGFloat = 5e-15
-        let misalignedCenter = CGPointMake(0.3, 9.99)
-        let bounds = CGRectMake(0, 0, 20.1, 21.9)
+        let misalignedCenter = CGPoint.init(x: 0.3, y: 9.99)
+        let bounds = CGRect.init(x: 0, y: 0, width: 20.1, height: 21.9)
         
-        let alignedScale1Center = CGPointMake(0.05, 9.95)
-        let alignedScale2Center = CGPointMake(0.05, 9.95)
-        let alignedScale3Center = CGPointMake((0.05 + 1.0 / 3.0), 9.95)
+        let alignedScale1Center = CGPoint.init(x: 0.05, y: 9.95)
+        let alignedScale2Center = CGPoint.init(x: 0.05, y: 9.95)
+        let alignedScale3Center = CGPoint.init(x: (0.05 + 1.0 / 3.0), y: 9.95)
         
         let output1 = F1RoundCenter(misalignedCenter, withBounds: bounds, andScale: 1)
         XCTAssertLessThan(abs(alignedScale1Center.x - output1.x), acceptableRoundingError)
@@ -224,13 +220,13 @@ final class F1MathTests: XCTestCase {
     }
     
     func testF1RoundCenterWithBoundsAndScaleWithZero() {
-        XCTAssertTrue(CGPointEqualToPoint(CGPoint.zero, F1RoundCenter(CGPointMake(-5, 10),
-                                                                      withBounds: CGRectMake(0, 0, 20, 20),
+        XCTAssertTrue(CGPoint.zero.equalTo(F1RoundCenter(CGPoint.init(x: -5, y: 10),
+                                                                      withBounds: CGRect.init(x: 0, y: 0, width: 20, height: 20),
                                                                       andScale: 0)))
     }
     
     func testF1RoundCenterWithBoundsAndScaleWithNull() {
-        XCTAssertTrue(CGPointEqualToPoint(CGPoint.zero, F1RoundCenter(CGPointMake(1, 2),
+        XCTAssertTrue(CGPoint.zero.equalTo(F1RoundCenter(CGPoint.init(x: 1, y: 2),
                                                                       withBounds: CGRect.null,
                                                                       andScale: 1)))
     }
