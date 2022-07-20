@@ -1,8 +1,8 @@
 //
-//  F1MathTests.swift
-//  Formula1-Components-Swift
+//  F1MathTest.swift
+//  Formula1_Components_SwiftTests
 //
-//  Created by Maarten Wubs on 7/16/22.
+//  Created by Maarten Wubs on 7/20/22.
 //
 
 import XCTest
