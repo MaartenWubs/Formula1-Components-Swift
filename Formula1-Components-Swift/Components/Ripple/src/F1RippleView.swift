@@ -115,7 +115,7 @@ public class F1RippleView: UIView {
     /// **animated**: Whether or not the fade in should be animated or not.
     /// **completion**: A completion block called after the completion of the animation.
     public func fadeIn(_ animated: Bool, completion: @escaping () -> Void) {
-        if let activeRippleLayer {
+        if let activeRippleLayer = activeRippleLayer {
             activeRippleLayer.fadeInRipple(animated: animated, completion: completion)
         } else {
             completion()
@@ -128,7 +128,7 @@ public class F1RippleView: UIView {
     /// **animated**: Whether or not the fade out should be animated or not.
     /// **completion**: A completion block ccalled after the completion of the animation.
     public func fadeOut(_ animated: Bool, completion: @escaping () -> Void) {
-        if let activeRippleLayer {
+        if let activeRippleLayer = activeRippleLayer {
             activeRippleLayer.fadeOutRipple(animated: animated, completion: completion)
         } else {
             completion()
@@ -165,7 +165,7 @@ public class F1RippleView: UIView {
     /// **animated**: Whether or not the ripple should be animted or not.
     /// **completion**: A completion block called after the completion of the animation.
     public func beginTouchUp(_ animated: Bool, completion: @escaping () -> Void) {
-        if let activeRippleLayer {
+        if let activeRippleLayer = activeRippleLayer {
             activeRippleLayer.endRipple(animated: animated, completion: completion)
         } else {
             completion()
@@ -209,7 +209,7 @@ public class F1RippleView: UIView {
     
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        if let traitCollectionDidChange {
+        if let traitCollectionDidChange = traitCollectionDidChange {
             traitCollectionDidChange(self, previousTraitCollection)
         }
     }
@@ -227,7 +227,7 @@ public class F1RippleView: UIView {
                 self.updateRippleStyle()
             }
             for subLayer in subLayers {
-                subLayer.frame = CGRectStandardize(self.bounds)
+                subLayer.frame = self.bounds.standardized
                 subLayer.setNeedsLayout()
             }
         }
@@ -266,7 +266,7 @@ extension F1RippleView {
         self.layer.masksToBounds = self.rippleStyle == F1RippleStyle.bounded
         if self.rippleStyle == F1RippleStyle.bounded {
             if self.usesSuperviewShadowLayerAsMask && ((self.superview?.layer.shadowPath) != nil) {
-                if let maskLayer {
+                if let maskLayer = maskLayer {
                     maskLayer.delegate = self
                 }
                 maskLayer?.path = self.superview?.layer.shadowPath
@@ -299,7 +299,7 @@ extension F1RippleView {
     
     func setActiveRippleColor(_ activeRippleColor: UIColor) {
         self.activeRippleColor = activeRippleColor
-        if let activeRippleLayer {
+        if let activeRippleLayer = activeRippleLayer {
             activeRippleLayer.fillColor = activeRippleColor.cgColor
         }
     }

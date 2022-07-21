@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32390F7C2888998E0021B2CC /* F1ActivityIndicatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32390F7B2888998E0021B2CC /* F1ActivityIndicatorState.swift */; };
+		324479302888A147008E9FCD /* Formula1_Components_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A04C7928888EB8008CB670 /* Formula1_Components_Swift.framework */; platformFilter = ios; };
+		324479362888A156008E9FCD /* F1MathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324479272888A123008E9FCD /* F1MathTest.swift */; };
 		32A04C7D28888EB8008CB670 /* Formula1_Components_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A04C7C28888EB8008CB670 /* Formula1_Components_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32A04D3328888EDE008CB670 /* F1TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04C8628888EDE008CB670 /* F1TabBarView.swift */; };
 		32A04D3428888EDE008CB670 /* F1ScalableFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04C8928888EDE008CB670 /* F1ScalableFontDescriptor.swift */; };
@@ -40,9 +43,7 @@
 		32A04D5028888EDE008CB670 /* UIColor+Formula1Blending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04CCD28888EDE008CB670 /* UIColor+Formula1Blending.swift */; };
 		32A04D5128888EDE008CB670 /* UIColor+Formula1GetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04CCE28888EDE008CB670 /* UIColor+Formula1GetColor.swift */; };
 		32A04D5228888EDE008CB670 /* UIColor+Formula1Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04CCF28888EDE008CB670 /* UIColor+Formula1Dynamic.swift */; };
-		32A04D5328888EDE008CB670 /* F1MathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04CD228888EDE008CB670 /* F1MathTests.swift */; };
 		32A04D5428888EDE008CB670 /* F1Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04CD428888EDE008CB670 /* F1Math.swift */; };
-		32A04D5528888EDE008CB670 /* Formula1ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04CD728888EDE008CB670 /* Formula1ApplicationTests.swift */; };
 		32A04D5628888EDE008CB670 /* UIApplication+F1AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04CD928888EDE008CB670 /* UIApplication+F1AppExtension.swift */; };
 		32A04D5728888EDE008CB670 /* F1SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04CDC28888EDE008CB670 /* F1SegmentedControl.swift */; };
 		32A04D5828888EDE008CB670 /* F1ShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04CDF28888EDE008CB670 /* F1ShadowLayer.swift */; };
@@ -87,7 +88,20 @@
 		C378125726EB39A6AFE7312A /* Pods_Formula1_Components_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA77FC5A20456636360EE1A /* Pods_Formula1_Components_Swift.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		324479312888A147008E9FCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32A04C7028888EB8008CB670 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32A04C7828888EB8008CB670;
+			remoteInfo = "Formula1-Components-Swift";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		32390F7B2888998E0021B2CC /* F1ActivityIndicatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1ActivityIndicatorState.swift; sourceTree = "<group>"; };
+		324479272888A123008E9FCD /* F1MathTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1MathTest.swift; sourceTree = "<group>"; };
+		3244792C2888A147008E9FCD /* Formula1_Components_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Formula1_Components_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A04C7928888EB8008CB670 /* Formula1_Components_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Formula1_Components_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A04C7C28888EB8008CB670 /* Formula1_Components_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Formula1_Components_Swift.h; sourceTree = "<group>"; };
 		32A04C8628888EDE008CB670 /* F1TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F1TabBarView.swift; sourceTree = "<group>"; };
@@ -122,7 +136,6 @@
 		32A04CCD28888EDE008CB670 /* UIColor+Formula1Blending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Formula1Blending.swift"; sourceTree = "<group>"; };
 		32A04CCE28888EDE008CB670 /* UIColor+Formula1GetColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Formula1GetColor.swift"; sourceTree = "<group>"; };
 		32A04CCF28888EDE008CB670 /* UIColor+Formula1Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Formula1Dynamic.swift"; sourceTree = "<group>"; };
-		32A04CD228888EDE008CB670 /* F1MathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F1MathTests.swift; sourceTree = "<group>"; };
 		32A04CD428888EDE008CB670 /* F1Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F1Math.swift; sourceTree = "<group>"; };
 		32A04CD728888EDE008CB670 /* Formula1ApplicationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formula1ApplicationTests.swift; sourceTree = "<group>"; };
 		32A04CD928888EDE008CB670 /* UIApplication+F1AppExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+F1AppExtension.swift"; sourceTree = "<group>"; };
@@ -172,6 +185,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		324479292888A147008E9FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				324479302888A147008E9FCD /* Formula1_Components_Swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32A04C7628888EB8008CB670 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,6 +204,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32390F7A288899810021B2CC /* private */ = {
+			isa = PBXGroup;
+			children = (
+				32390F7B2888998E0021B2CC /* F1ActivityIndicatorState.swift */,
+			);
+			path = private;
+			sourceTree = "<group>";
+		};
 		32A04C6F28888EB8008CB670 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				32A04C7928888EB8008CB670 /* Formula1_Components_Swift.framework */,
+				3244792C2888A147008E9FCD /* Formula1_Components_SwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -639,7 +669,7 @@
 		32A04CD128888EDE008CB670 /* test */ = {
 			isa = PBXGroup;
 			children = (
-				32A04CD228888EDE008CB670 /* F1MathTests.swift */,
+				324479272888A123008E9FCD /* F1MathTest.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -736,6 +766,7 @@
 		32A04CE428888EDE008CB670 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				32390F7A288899810021B2CC /* private */,
 				32A04CE528888EDE008CB670 /* F1ActivityIndicatorDelegate.swift */,
 				32A04CE628888EDE008CB670 /* F1ActivityIndicator.swift */,
 			);
@@ -1091,7 +1122,6 @@
 				A981699C89B450550052EE81 /* Pods-Formula1-Components-Swift.debug.xcconfig */,
 				91F7D7219D7E56BC3FE7CEB1 /* Pods-Formula1-Components-Swift.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -1117,6 +1147,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3244792B2888A147008E9FCD /* Formula1_Components_SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 324479332888A147008E9FCD /* Build configuration list for PBXNativeTarget "Formula1_Components_SwiftTests" */;
+			buildPhases = (
+				324479282888A147008E9FCD /* Sources */,
+				324479292888A147008E9FCD /* Frameworks */,
+				3244792A2888A147008E9FCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				324479322888A147008E9FCD /* PBXTargetDependency */,
+			);
+			name = Formula1_Components_SwiftTests;
+			productName = Formula1_Components_SwiftTests;
+			productReference = 3244792C2888A147008E9FCD /* Formula1_Components_SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		32A04C7828888EB8008CB670 /* Formula1-Components-Swift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32A04C8028888EB8008CB670 /* Build configuration list for PBXNativeTarget "Formula1-Components-Swift" */;
@@ -1143,8 +1191,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					3244792B2888A147008E9FCD = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					32A04C7828888EB8008CB670 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -1164,11 +1216,19 @@
 			projectRoot = "";
 			targets = (
 				32A04C7828888EB8008CB670 /* Formula1-Components-Swift */,
+				3244792B2888A147008E9FCD /* Formula1_Components_SwiftTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3244792A2888A147008E9FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32A04C7728888EB8008CB670 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1204,6 +1264,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		324479282888A147008E9FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				324479362888A156008E9FCD /* F1MathTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32A04C7528888EB8008CB670 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1222,7 +1290,6 @@
 				32A04D3328888EDE008CB670 /* F1TabBarView.swift in Sources */,
 				32A04D6428888EDE008CB670 /* F1BottomNavigationBar.swift in Sources */,
 				32A04D6E28888EDE008CB670 /* F1StackViewHeader.swift in Sources */,
-				32A04D5528888EDE008CB670 /* Formula1ApplicationTests.swift in Sources */,
 				32A04D5A28888EDE008CB670 /* F1ActivityIndicatorDelegate.swift in Sources */,
 				32A04D3728888EDE008CB670 /* F1ActionSheetController.swift in Sources */,
 				32A04D4028888EDE008CB670 /* F1FeaturedHighlighViewController.swift in Sources */,
@@ -1245,7 +1312,6 @@
 				32A04D3F28888EDE008CB670 /* F1FeaturedHighlightView.swift in Sources */,
 				32A04D3C28888EDE008CB670 /* F1Card.swift in Sources */,
 				32A04D5428888EDE008CB670 /* F1Math.swift in Sources */,
-				32A04D5328888EDE008CB670 /* F1MathTests.swift in Sources */,
 				32A04D3D28888EDE008CB670 /* F1BottomAppBarView.swift in Sources */,
 				32A04D6628888EDE008CB670 /* F1MessageBarError.swift in Sources */,
 				32A04D3A28888EDE008CB670 /* F1TextField.swift in Sources */,
@@ -1262,6 +1328,7 @@
 				32A04D5028888EDE008CB670 /* UIColor+Formula1Blending.swift in Sources */,
 				32A04D5B28888EDE008CB670 /* F1ActivityIndicator.swift in Sources */,
 				32A04D7B28888EDE008CB670 /* F1ProgressView.swift in Sources */,
+				32390F7C2888998E0021B2CC /* F1ActivityIndicatorState.swift in Sources */,
 				32A04D6F28888EDE008CB670 /* F1PageControl.swift in Sources */,
 				32A04D4928888EDE008CB670 /* F1RipplePendingAnimation.swift in Sources */,
 				32A04D3828888EDE008CB670 /* F1CollectionVieCell.swift in Sources */,
@@ -1289,7 +1356,48 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		324479322888A147008E9FCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 32A04C7828888EB8008CB670 /* Formula1-Components-Swift */;
+			targetProxy = 324479312888A147008E9FCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		324479342888A147008E9FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84ZZPDTX5R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maartenwubs.Formula1-Components-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		324479352888A147008E9FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84ZZPDTX5R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maartenwubs.Formula1-Components-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		32A04C7E28888EB8008CB670 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1424,6 +1532,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1433,6 +1542,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maartenwubs.Formula1-Components-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1443,6 +1553,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 91F7D7219D7E56BC3FE7CEB1 /* Pods-Formula1-Components-Swift.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1453,6 +1564,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1462,6 +1574,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maartenwubs.Formula1-Components-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1471,6 +1584,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		324479332888A147008E9FCD /* Build configuration list for PBXNativeTarget "Formula1_Components_SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				324479342888A147008E9FCD /* Debug */,
+				324479352888A147008E9FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		32A04C7328888EB8008CB670 /* Build configuration list for PBXProject "Formula1-Components-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
