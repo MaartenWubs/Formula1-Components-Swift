@@ -22,11 +22,11 @@ let qRippleLayerPositionString: String = "position"
 let qRippleLayerScaleString: String = "transform.scale"
 
 func GetInitialRippleRadius(_ rect: CGRect) -> CGFloat {
-    return max(CGRectGetWidth(rect), CGRectGetHeight(rect)) * qRippleStartingScale / 2
+    return max(rect.width, rect.height) * qRippleStartingScale / 2
 }
 
 func GetFinalRippleRadius(_ rect: CGRect) -> CGFloat {
-    return CGFloat(hypot(CGRectGetMidX(rect), CGRectGetMidY(rect)) + qExpandRippleBeyondSurface)
+    return CGFloat(hypot(rect.midX, rect.midY) + qExpandRippleBeyondSurface)
 }
 
 /// The Ripple Layer presents and animates the ripple. There can be multiple Ripple Layers
@@ -54,7 +54,7 @@ public class F1RippleLayer: CAShapeLayer {
         super.setNeedsLayout()
         
         self.calculateRadiusAndSetPath()
-        self.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds))
+        self.position = CGPoint.init(x: self.bounds.midX, y: self.bounds.midY)
     }
     
     func calculateRadiusAndSetPath() {
@@ -62,7 +62,7 @@ public class F1RippleLayer: CAShapeLayer {
     }
     
     func setPathFromRadii(_ radius: CGFloat) {
-        let ovalRect: CGRect = CGRectMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds), radius * 2, radius * 2)
+        let ovalRect: CGRect = CGRect.init(x: self.bounds.midX, y: self.bounds.midY, width: radius * 2, height: radius * 2)
         let circlePath = UIBezierPath(ovalIn: ovalRect)
         self.path = circlePath.cgPath
     }
@@ -81,7 +81,7 @@ public class F1RippleLayer: CAShapeLayer {
         let finalRadius: CGFloat = self.calculateRadius()
         setPathFromRadii(finalRadius)
         self.opacity = 1
-        self.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds))
+        self.position = CGPoint.init(x: self.bounds.midX, y: self.bounds.midY)
         if animated {
             completion()
             rippleLayerDelegate?.rippleLayerTouchDownAnimationDidEnd(self)
@@ -97,7 +97,7 @@ public class F1RippleLayer: CAShapeLayer {
             
             let centerPath = UIBezierPath()
             let startPoint = point
-            let endPoint = CGPointMake(CGRectGetMidY(self.bounds), CGRectGetMidY(self.bounds))
+            let endPoint = CGPoint.init(x: self.bounds.midY, y: self.bounds.midY)
             centerPath.move(to: startPoint)
             centerPath.addLine(to: endPoint)
             centerPath.close()

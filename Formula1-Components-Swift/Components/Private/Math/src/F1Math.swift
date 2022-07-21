@@ -67,36 +67,36 @@ public func F1FloorValue(_ value: CGFloat,
 /// factor.
 public func F1AlignRect(_ rect: CGRect, toScale scale: CGFloat) -> CGRect {
     var internalScale = scale
-    if CGRectIsNull(rect) {
-        return CGRectNull
+    if rect.isNull {
+        return CGRect.null
     }
     if F1CGFloatEquals(internalScale, 0) {
         internalScale = 1
     }
     
     if F1CGFloatEquals(internalScale, 1) {
-        return CGRectIntegral(rect)
+        return rect.integral
     }
     
-    let originalMinimumPoint: CGPoint = CGPointMake(CGRectGetMinX(rect),
-                                                    CGRectGetMinY(rect))
-    let newOrigin: CGPoint = CGPointMake(floor(originalMinimumPoint.x * internalScale) / internalScale,
-                                         floor(originalMinimumPoint.y * internalScale) / internalScale)
+    let originalMinimumPoint: CGPoint = CGPoint.init(x: rect.minX,
+                                                     y: rect.minY)
+    let newOrigin: CGPoint = CGPoint.init(x: floor(originalMinimumPoint.x * internalScale) / internalScale,
+                                          y: floor(originalMinimumPoint.y * internalScale) / internalScale)
     
-    let adjustWidthHeight: CGSize = CGSizeMake(originalMinimumPoint.x - newOrigin.x,
-                                               originalMinimumPoint.y - newOrigin.y)
-    return CGRectMake(newOrigin.x,
-                      newOrigin.y,
-                      ceil((CGRectGetWidth(rect) + adjustWidthHeight.width) * internalScale) / internalScale,
-                      ceil((CGRectGetHeight(rect) + adjustWidthHeight.height) * internalScale) / internalScale)
+    let adjustWidthHeight: CGSize = CGSize.init(width: originalMinimumPoint.x - newOrigin.x,
+                                                height: originalMinimumPoint.y - newOrigin.y)
+    return CGRect.init(x: newOrigin.x,
+                       y: newOrigin.y,
+                       width: ceil((rect.width + adjustWidthHeight.width) * internalScale) / internalScale,
+                       height: ceil((rect.height + adjustWidthHeight.height) * internalScale) / internalScale)
 }
 
 public func F1RoundPoint(_ point: CGPoint, withScale scale: CGFloat) -> CGPoint {
     if F1CGFloatEquals(scale, 0) {
-        return CGPointZero
+        return CGPoint.zero
     }
-    return CGPointMake(round(point.x * scale) / scale,
-                       round(point.y * scale) / scale)
+    return CGPoint.init(x: round(point.x * scale) / scale,
+                        y: round(point.y * scale) / scale)
 }
 
 /// Expand `size` to the closest larger pixel-aligned value. If **scale** is zero,
@@ -109,10 +109,10 @@ public func F1RoundPoint(_ point: CGPoint, withScale scale: CGFloat) -> CGPoint 
 /// provided scale factor.
 public func F1CeilSize(_ size: CGSize, withScale scale: CGFloat) -> CGSize {
     if F1CGFloatEquals(scale, 0) {
-        return CGSizeZero
+        return CGSize.zero
     }
-    return CGSizeMake(ceil(size.width * scale) / scale,
-                      ceil(size.height * scale) / scale)
+    return CGSize.init(width: ceil(size.width * scale) / scale,
+                       height: ceil(size.height * scale) / scale)
 }
 
 /// Align the centerPoint of a view so that its origin is pixel-aligned to the nearest pixel. Returns
@@ -126,16 +126,16 @@ public func F1CeilSize(_ size: CGSize, withScale scale: CGFloat) -> CGSize {
 public func F1RoundCenter(_ center: CGPoint,
                    withBounds bounds: CGRect,
                    andScale scale: CGFloat) -> CGPoint {
-    if F1CGFloatEquals(scale, 0) || CGRectIsNull(bounds) {
-        return CGPointZero
+    if F1CGFloatEquals(scale, 0) || bounds.isNull {
+        return CGPoint.zero
     }
     
-    let halfWidth: CGFloat = CGRectGetWidth(bounds) / 2
-    let halfHeight: CGFloat = CGRectGetHeight(bounds) / 2
-    var origin: CGPoint = CGPointMake(center.x - halfWidth,
-                                      center.y - halfHeight)
+    let halfWidth: CGFloat = bounds.width / 2
+    let halfHeight: CGFloat = bounds.height / 2
+    var origin: CGPoint = CGPoint.init(x: center.x - halfWidth,
+                                       y: center.y - halfHeight)
     origin = F1RoundPoint(origin, withScale: scale)
-    return CGPointMake(origin.x + halfWidth, origin.y + halfHeight)
+    return CGPoint.init(x: origin.x + halfWidth, y: origin.y + halfHeight)
 }
 
 /// Compare two edge insets using `F1CGFloatEquals`.
