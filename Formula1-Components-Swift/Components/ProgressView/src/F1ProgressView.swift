@@ -10,6 +10,16 @@ import UIKit
 
 // TODO: [f1p040ac644-progressView]
 
+// MARK: - Global properties
+
+let F1ProgressViewDefaultColor: UIColor = {
+    return .blue    //TODO: Use palatte blue color with tint500
+                    // Color still needs to be made. Return default
+                    // blue for now.
+}()
+let F1ProgressViewTrackColorDesaturation: CGFloat = 0.3
+let F1ProgressViewAnimationDuration: TimeInterval = 0.25
+
 /// The mode the progress bar is in.
 public enum F1ProgressViewMode {
     
@@ -86,6 +96,26 @@ public class F1ProgressView: UIView {
     /// will determine which animation to use. The default is `F1ProgressViewBackwardsAnimationMode.reset`.
     public var backwardProgressAnimationmode: F1ProgressViewBackwardsAnimationMode = .reset
     
+    // MARK: - Init
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonF1ProgressViewInit()
+    }
+    
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonF1ProgressViewInit()
+    }
+    
+    func commonF1ProgressViewInit() {}
+    
+    // MARK: - UIView
+    
+    public override func willMove(toSuperview newSuperview: UIView?) {}
+    
+    public override func layoutSubviews() {}
+    
     // MARK: - Public Methods
     
     /// Adjusts the current progress, optionally animating the change.
@@ -107,5 +137,11 @@ public class F1ProgressView: UIView {
     
     /// Stop the progress bar's indeterminate animation.
     public func stopAnimating() {}
+    
+    // MARK: - Accessibility
+    
+    public override class func accessibilityValue() -> String? { return "" }
+    
+    // MARK: - Private methods
     
 }
