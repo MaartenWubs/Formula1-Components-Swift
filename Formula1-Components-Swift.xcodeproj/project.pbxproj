@@ -10,6 +10,7 @@
 		32390F7C2888998E0021B2CC /* F1ActivityIndicatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32390F7B2888998E0021B2CC /* F1ActivityIndicatorState.swift */; };
 		324479302888A147008E9FCD /* Formula1_Components_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A04C7928888EB8008CB670 /* Formula1_Components_Swift.framework */; platformFilter = ios; };
 		324479362888A156008E9FCD /* F1MathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324479272888A123008E9FCD /* F1MathTest.swift */; };
+		324479582889E1AE008E9FCD /* F1ShapeGenerating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324479572889E1AE008E9FCD /* F1ShapeGenerating.swift */; };
 		32A04C7D28888EB8008CB670 /* Formula1_Components_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A04C7C28888EB8008CB670 /* Formula1_Components_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32A04D3328888EDE008CB670 /* F1TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04C8628888EDE008CB670 /* F1TabBarView.swift */; };
 		32A04D3428888EDE008CB670 /* F1ScalableFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04C8928888EDE008CB670 /* F1ScalableFontDescriptor.swift */; };
@@ -102,6 +103,7 @@
 		32390F7B2888998E0021B2CC /* F1ActivityIndicatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1ActivityIndicatorState.swift; sourceTree = "<group>"; };
 		324479272888A123008E9FCD /* F1MathTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1MathTest.swift; sourceTree = "<group>"; };
 		3244792C2888A147008E9FCD /* Formula1_Components_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Formula1_Components_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		324479572889E1AE008E9FCD /* F1ShapeGenerating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1ShapeGenerating.swift; sourceTree = "<group>"; };
 		32A04C7928888EB8008CB670 /* Formula1_Components_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Formula1_Components_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A04C7C28888EB8008CB670 /* Formula1_Components_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Formula1_Components_Swift.h; sourceTree = "<group>"; };
 		32A04C8628888EDE008CB670 /* F1TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F1TabBarView.swift; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 			isa = PBXGroup;
 			children = (
 				32A04CC028888EDE008CB670 /* F1ShapedView.swift */,
+				324479572889E1AE008E9FCD /* F1ShapeGenerating.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1324,6 +1327,7 @@
 				32A04D4128888EDE008CB670 /* F1SliderColorThemer.swift in Sources */,
 				32A04D4F28888EDE008CB670 /* F1NavigationBoxController.swift in Sources */,
 				32A04D7628888EDE008CB670 /* F1TonalPalette.swift in Sources */,
+				324479582889E1AE008E9FCD /* F1ShapeGenerating.swift in Sources */,
 				32A04D5728888EDE008CB670 /* F1SegmentedControl.swift in Sources */,
 				32A04D5028888EDE008CB670 /* UIColor+Formula1Blending.swift in Sources */,
 				32A04D5B28888EDE008CB670 /* F1ActivityIndicator.swift in Sources */,
