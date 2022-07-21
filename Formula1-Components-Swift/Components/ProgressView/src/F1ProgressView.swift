@@ -140,8 +140,29 @@ public class F1ProgressView: UIView {
     
     // MARK: - Accessibility
     
+    public func accessibilityProgressView() -> UIProgressView { return UIProgressView() }
+    
     public override class func accessibilityValue() -> String? { return "" }
+    
+    public func accessibilityDidChange() {}
+    
+    public func announceAccessibilityValueChange() {}
+    
+    public override class func accessibilityLabel() -> String? { return "" }
     
     // MARK: - Private methods
     
+    func animationDuration() -> TimeInterval { return 0.0 }
+    
+    func animationOptions() -> UIView.AnimationOptions { return .allowAnimatedContent }
+    
+    func defaultTrackTintColor(for progress: UIColor) -> UIColor { return .clear }
+    
+    func updateProgressView() {}
+    
+    func updateIndeterminateProgressView() {}
+    
+    func updateTrackView() {}
+    
+    func startAnimatingBar() {}
 }
