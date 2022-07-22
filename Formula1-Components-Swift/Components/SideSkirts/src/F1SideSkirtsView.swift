@@ -121,4 +121,40 @@ public class F1SideSkirtsView: UIControl {
     ///
     /// When `centerVisibleArea` is `false`, this value is `UIEdgesInsets.zero`
     public var visibleAreaInsets: UIEdgeInsets = .zero
+    
+    // MARK: - Public method
+    // TODO: Add documentation...
+    
+    public func setBackgroundColor(for state: UIControl.State) -> UIColor? { return nil }
+    
+    public func setBackgroundColor(_ background: UIColor?, for state: UIControl.State) { }
+    
+    public func borderColor(for state: UIControl.State) -> UIColor? { return nil }
+    
+    public func setBorderColor(_ color: UIColor?, for state: UIControl.State) { }
+    
+    public func borderWidth(for state: UIControl.State) -> CGFloat { return 0.0 }
+    
+    public func setBorderWidth(_ width: CGFloat, for state: UIControl.State) { }
+    
+    public func elevation(for state: UIControl.State) -> F1ShadowElevation? { return nil }
+    
+    public func setElevation(_ elevation: F1ShadowElevation, for state: UIControl.State) { }
+    
+    public func inkColor(for state: UIControl.State) -> UIColor? { return nil }
+    
+    public func setInkColor(_ color: UIColor?, for state: UIControl.State) { }
+    
+    public func rippleColor(for state: UIControl.State) -> UIColor? { return nil }
+    
+    public func setRippleColor(_ color: UIColor?, for state: UIControl.State) { }
+    
+    public func shadowColor(for state: UIControl.State) -> UIColor? { return nil }
+    
+    public func setShadowColor(_ color: UIColor?, for state: UIControl.State) { }
+    
+    public func titleColor(for state: UIControl.State) -> UIColor? { return nil }
+    
+    public func setTitleColor(_ color: UIColor?, for state: UIControl.State) { }
+    
 }
