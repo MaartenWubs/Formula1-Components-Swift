@@ -10,6 +10,18 @@ import UIKit
 
 // TODO: [f1s3304f03-sideSkirts]
 
+// MARK: - Global properties
+let F1SideSkirtBackgroundColor: UInt32 = 0xEBEBEB
+let F1SideSkirtSelectedDarkenPercent: CGFloat = 0.16
+let F1SideSkirtDisabledLightenPercent: CGFloat = 0.38
+let F1SideSkirtTitleColorWhite: CGFloat = 0.13
+let F1SideSkirtTitleColorDisbaledLightenPercent: CGFloat = 0.38
+
+let F1SideSkirtContentPadding: UIEdgeInsets = .init(top: 4, left: 4, bottom: 4, right: 4)
+let F1SideSkirtImagePadding: UIEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
+let F1SideSkirtTitlePadding: UIEdgeInsets = .init(top: 3, left: 8, bottom: 4, right: 8)
+let F1SideSkirtAccessoryPadding: UIEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
+
 /// Side skirts are compact elemets that represent an attribute, text, enity, or action.
 ///
 /// Side skirts contain an optional leading image, a title label and an optional trailing view.
@@ -51,28 +63,28 @@ public class F1SideSkirtsView: UIControl {
     /// The side skirt uses this property to determine `instrinsicContentSize` and `sizeThatFits`
     ///
     /// Defaults to (4, 4, 4, 4)
-    public var contentPadding: UIEdgeInsets = .init(top: 4, left: 4, bottom: 4, right: 4)
+    public var contentPadding: UIEdgeInsets = F1SideSkirtContentPadding
     
     /// Padding around the image view. Only used if the image view has a non nil image.
     ///
     /// The side skirt uses this property to determine `instrinsicContentSize` and `sizeThatFits`
     ///
     /// Defaults to (0, 0, 0, 0)
-    public var imagePadding: UIEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
+    public var imagePadding: UIEdgeInsets = F1SideSkirtImagePadding
     
     /// Padding around the accessory view. Only used if the accessory has a non nil image.
     ///
     /// The side skirt uses this property to determine `instrinsicContentSize` and `sizeThatFits`
     ///
     /// Defaults to (0, 0, 0, 0)
-    public var accessoryPadding: UIEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
+    public var accessoryPadding: UIEdgeInsets = F1SideSkirtAccessoryPadding
     
     /// Padding around the title.
     ///
     /// The side skirt uses this property to determine `instrinsicContentSize` and `sizeThatFits`
     ///
     /// Defaults to (3, 8, 4, 8). The top padding is shorter so the default height of a side skirt is 32 pts.
-    public var titlePadding: UIEdgeInsets = .init(top: 3, left: 8, bottom: 4, right: 8)
+    public var titlePadding: UIEdgeInsets = F1SideSkirtTitlePadding
     
     /// Font used to render the title.
     ///
