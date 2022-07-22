@@ -17,10 +17,16 @@ let F1SideSkirtDisabledLightenPercent: CGFloat = 0.38
 let F1SideSkirtTitleColorWhite: CGFloat = 0.13
 let F1SideSkirtTitleColorDisbaledLightenPercent: CGFloat = 0.38
 
+let qF1SideSkirtMinimumSizeDefault: CGSize = .init(width: 0, height: 32)
+
 let F1SideSkirtContentPadding: UIEdgeInsets = .init(top: 4, left: 4, bottom: 4, right: 4)
 let F1SideSkirtImagePadding: UIEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
 let F1SideSkirtTitlePadding: UIEdgeInsets = .init(top: 3, left: 8, bottom: 4, right: 8)
 let F1SideSkirtAccessoryPadding: UIEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
+
+let qEnablePerformantShadow = false
+
+let kKVOContextF1SideSkirtView = ("kKVOContextF1SideSkirtView" as NSString).utf8String
 
 /// Side skirts are compact elemets that represent an attribute, text, enity, or action.
 ///
@@ -122,8 +128,67 @@ public class F1SideSkirtsView: UIControl {
     /// When `centerVisibleArea` is `false`, this value is `UIEdgesInsets.zero`
     public var visibleAreaInsets: UIEdgeInsets = .zero
     
+    // MARK: - Private properties
+    
+    var contentRect: CGRect = .zero
+    //var layer: F1ShapedShadowLayer // TODO: make F1ShapedShadowLayer
+    var showImageView: Bool = false
+    var showSelectedImageView: Bool = false
+    var showAccessoryView: Bool = false
+    var shouldFullyRoundedCorner: Bool = false
+    var inkView: F1InkView = .init()
+    var rippleView: F1RippleView = .init()
+    var rippleColors: [NSNumber : UIColor] = [:]
+    var pixelScale: CGFloat = .zero
+    var enableRippleBehavior: Bool = false
+    var currentVisibleAreaInsets: UIEdgeInsets = .init()
+    var currentCornerRadius: CGFloat = .zero
+    
+    var _backgroundColors: [NSNumber : UIColor]?
+    var _borderColors: [NSNumber : UIColor]?
+    var _borderWidths: [NSNumber : NSNumber]?
+    var _elevations: [NSNumber : NSNumber]?
+    var _inkColors: [NSNumber : UIColor]?
+    var _shadowColors: [NSNumber : UIColor]?
+    var _titleColors: [NSNumber : UIColor]?
+    
+    var _titleFont: UIFont?
+    
+    var _f1_adjustsFontForContentSizeCategory: Bool = false
+    var _currentElevation: CGFloat = 0.0
+    
+    // MARK: - Init
+    
+    public override class var layerClass: AnyClass {
+        return super.layerClass
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonF1SideSkirtViewInit()
+    }
+    
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonF1SideSkirtViewInit()
+    }
+    
+    func commonF1SideSkirtViewInit() {
+        minimumSize = qF1SideSkirtMinimumSizeDefault
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = UIAccessibilityTraits.button
+        _currentElevation = 0
+        if qEnablePerformantShadow {
+            
+        }
+        
+    }
+    
+    func dealloc() {
+        removeTarget(self, action: nil, for: UIControl.Event.allEvents)
+    }
+    
     // MARK: - Public method
-    // TODO: Add documentation...
     
     /// A color used as the side skirt's `backgroundColor` for `state`.
     ///
