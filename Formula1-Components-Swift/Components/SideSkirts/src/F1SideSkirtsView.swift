@@ -125,36 +125,129 @@ public class F1SideSkirtsView: UIControl {
     // MARK: - Public method
     // TODO: Add documentation...
     
-    public func setBackgroundColor(for state: UIControl.State) -> UIColor? { return nil }
+    /// A color used as the side skirt's `backgroundColor` for `state`.
+    ///
+    /// If no background color has been set for a given state, the returend value will fall back to the
+    /// value set for `UIControl.State.normal`.
+    ///
+    ///  - Parameter state: The control state.
+    ///  - Return: The background color.
+    public func backgroundColor(for state: UIControl.State) -> UIColor? { return nil }
     
+    /// A color used as the side skirt's `backgroundColor`
+    ///
+    /// Defaults to blue.
+    ///
+    /// - Parameter backgroundColor: The background color.
+    /// - Parameter state: The control state.
     public func setBackgroundColor(_ background: UIColor?, for state: UIControl.State) { }
     
+    /// Returns the border color for a particular control state.
+    ///
+    /// If no border width has been set for a given state, the returned value will fall back to the value
+    /// set for `UIControl.State.normal`
+    ///
+    /// - Parameter state: The control color.
+    /// - Return: The border color for the requested state.
     public func borderColor(for state: UIControl.State) -> UIColor? { return nil }
     
+    /// Sets the border color for a particular control state.
+    ///
+    /// - Parameter borderColor: The border color.
+    /// - Parameter state: The control state.
     public func setBorderColor(_ color: UIColor?, for state: UIControl.State) { }
     
+    /// Returns the border width for a particular control state.
+    ///
+    /// If no border width has been set for a given state, the returned value will back to the value
+    /// set for `UIControl.State.normal`.
+    ///
+    /// - Parameter state: The control state.
+    /// - Return: The border width for the requested state.
     public func borderWidth(for state: UIControl.State) -> CGFloat { return 0.0 }
     
+    /// Sets the border width for a particular control state.
+    ///
+    /// - Parameter borderWidth: The border width.
+    /// - Parameter state: The control state.
     public func setBorderWidth(_ width: CGFloat, for state: UIControl.State) { }
     
+    /// Returns the elevation for a particular control state.
+    ///
+    /// If no elevation has been set for a given state, the returned value will fall back to the value set
+    /// for `UIControl.State.normal`
+    ///
+    /// - Parameter state: The control state.
+    /// - Return: The elevation for the requested state.
     public func elevation(for state: UIControl.State) -> F1ShadowElevation? { return nil }
     
+    /// Sets the elevation for a particular control state.
+    ///
+    /// - Parameter elevation: The elevation.
+    /// - Parameter state: The control state.
     public func setElevation(_ elevation: F1ShadowElevation, for state: UIControl.State) { }
     
+    /// Returns the ink color for a particular control state.
+    ///
+    /// If no ink color has been set for a given state, the returned value will fall back to the value
+    /// set for `UIControl.State.normal`. Defaults to nil. When nil `F1InkView.defaultColor`
+    /// is used.
+    ///
+    /// - Parameter state: The control state.
+    /// - Return: The ink color for the requested state,
     public func inkColor(for state: UIControl.State) -> UIColor? { return nil }
     
+    /// Sets the ink color for a particular control state.
+    ///
+    /// - Parameter inkColor: The ink color.
+    /// - Parameter state: The control state.
     public func setInkColor(_ color: UIColor?, for state: UIControl.State) { }
     
+    /// Returns the ripple color associated with the specified state.
+    ///
+    /// The ripple color for the specified state. If no ripple color has been set for the specific state,
+    /// the method returns the title associated with the `UIControl.State.normal` state.
+    ///
+    /// **Note**: Defaults to `nil`. When `nil` transparent black is used.
+    ///
+    /// - Parameter state: The state uses the ripple color.
+    /// - Return: The ripple color for the requested state.
     public func rippleColor(for state: UIControl.State) -> UIColor? { return nil }
     
+    /// Sets the ripple color for a particular control state.
+    ///
+    /// - Parameter rippleColor: The ripple color to use for the specified state.
+    /// - Parameter state: The state that uses the specified ripple color.
     public func setRippleColor(_ color: UIColor?, for state: UIControl.State) { }
     
+    /// Returns the shadow color for a particular control state.
+    ///
+    /// If no shadow color has been set for a given state, the returned value will fall back to the value
+    /// set for `UIControl.State.normal`.
+    ///
+    /// - Parameter state: The control state.
+    /// - Return: The shadow color for the requested state.
     public func shadowColor(for state: UIControl.State) -> UIColor? { return nil }
     
+    /// Sets the shadow color for a particular control state.
+    ///
+    /// - Parameter elevation: The shadow color.
+    /// - Parameter state: The control state.
     public func setShadowColor(_ color: UIColor?, for state: UIControl.State) { }
     
+    /// Retruns the title color for a particular control state.
+    ///
+    /// If no title color has been set for a given state, the returned value will fall back to the value
+    /// set for `UIControl.State.normal`.
+    ///
+    /// - Parameter state: The control state.
+    /// - Return: The title color for the required state.
     public func titleColor(for state: UIControl.State) -> UIColor? { return nil }
     
+    /// Sets the title color for a particular control state.
+    ///
+    /// - Parameter titleColor: The title color.
+    /// - Parameter state: The control state.
     public func setTitleColor(_ color: UIColor?, for state: UIControl.State) { }
     
 }
