@@ -16,7 +16,7 @@ extension UIColor {
     /// The colot is the blended color of Surface and Elevation Overlay. Negative
     /// elevation is treated as 0.
     /// Pattern-based UIColor is not supported.
-    /// - **elevation**: The `f1_absoluteElevation` value to use when resolving the color.
+    /// - Parameter elevation: The `f1_absoluteElevation` value to use when resolving the color.
     public func f1_resolvedColor(with elevation: CGFloat) -> UIColor {
         // TODO
         return .clear
@@ -30,10 +30,19 @@ extension UIColor {
     /// Negative elevation is treated as 0.
     /// Pattern-based UIColor is not supported.
     ///
+    ///- Parameter traitCollection:
+    ///- Parameter previousTraitCollection:
+    ///- Parameter elevation:
     public func f1_resolvedColor(with traitCollection: UITraitCollection,
                                  previous previousTraitCollection: UITraitCollection,
                                  elevation: CGFloat) -> UIColor {
         // TODO
+        return .clear
+    }
+    
+    
+    public func f1_resolvedColor(with traitCollection: UITraitCollection,
+                                 elevation: CGFloat) -> UIColor {
         return .clear
     }
 }
