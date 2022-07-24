@@ -10,8 +10,8 @@
 		32390F7C2888998E0021B2CC /* F1ActivityIndicatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32390F7B2888998E0021B2CC /* F1ActivityIndicatorState.swift */; };
 		324479302888A147008E9FCD /* Formula1_Components_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A04C7928888EB8008CB670 /* Formula1_Components_Swift.framework */; platformFilter = ios; };
 		324479362888A156008E9FCD /* F1MathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324479272888A123008E9FCD /* F1MathTest.swift */; };
-		324479582889E1AE008E9FCD /* F1ShapeGenerating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324479572889E1AE008E9FCD /* F1ShapeGenerating.swift */; };
-		3244795B288A83E5008E9FCD /* CGRect+SideSkirt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244795A288A83E5008E9FCD /* CGRect+SideSkirt.swift */; };
+		3244795D288D41CC008E9FCD /* F1AlertControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244795C288D41CC008E9FCD /* F1AlertControllerDelegate.swift */; };
+		3244795F288D88B5008E9FCD /* F1AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3244795E288D88B5008E9FCD /* F1AlertAction.swift */; };
 		32A04C7D28888EB8008CB670 /* Formula1_Components_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A04C7C28888EB8008CB670 /* Formula1_Components_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32A04D3328888EDE008CB670 /* F1TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04C8628888EDE008CB670 /* F1TabBarView.swift */; };
 		32A04D3428888EDE008CB670 /* F1ScalableFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04C8928888EDE008CB670 /* F1ScalableFontDescriptor.swift */; };
@@ -104,8 +104,8 @@
 		32390F7B2888998E0021B2CC /* F1ActivityIndicatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1ActivityIndicatorState.swift; sourceTree = "<group>"; };
 		324479272888A123008E9FCD /* F1MathTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1MathTest.swift; sourceTree = "<group>"; };
 		3244792C2888A147008E9FCD /* Formula1_Components_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Formula1_Components_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		324479572889E1AE008E9FCD /* F1ShapeGenerating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1ShapeGenerating.swift; sourceTree = "<group>"; };
-		3244795A288A83E5008E9FCD /* CGRect+SideSkirt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+SideSkirt.swift"; sourceTree = "<group>"; };
+		3244795C288D41CC008E9FCD /* F1AlertControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1AlertControllerDelegate.swift; sourceTree = "<group>"; };
+		3244795E288D88B5008E9FCD /* F1AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1AlertAction.swift; sourceTree = "<group>"; };
 		32A04C7928888EB8008CB670 /* Formula1_Components_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Formula1_Components_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A04C7C28888EB8008CB670 /* Formula1_Components_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Formula1_Components_Swift.h; sourceTree = "<group>"; };
 		32A04C8628888EDE008CB670 /* F1TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F1TabBarView.swift; sourceTree = "<group>"; };
@@ -849,6 +849,8 @@
 			isa = PBXGroup;
 			children = (
 				32A04CF528888EDE008CB670 /* F1AlertController.swift */,
+				3244795E288D88B5008E9FCD /* F1AlertAction.swift */,
+				3244795C288D41CC008E9FCD /* F1AlertControllerDelegate.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1345,8 +1347,10 @@
 				32A04D7B28888EDE008CB670 /* F1ProgressView.swift in Sources */,
 				32390F7C2888998E0021B2CC /* F1ActivityIndicatorState.swift in Sources */,
 				32A04D6F28888EDE008CB670 /* F1PageControl.swift in Sources */,
+				3244795F288D88B5008E9FCD /* F1AlertAction.swift in Sources */,
 				32A04D4928888EDE008CB670 /* F1RipplePendingAnimation.swift in Sources */,
 				32A04D3828888EDE008CB670 /* F1CollectionVieCell.swift in Sources */,
+				3244795D288D41CC008E9FCD /* F1AlertControllerDelegate.swift in Sources */,
 				32A04D4828888EDE008CB670 /* F1RippleViewDelegate.swift in Sources */,
 				32A04D6C28888EDE008CB670 /* F1MessageBarMessageInternal.swift in Sources */,
 				32A04D7028888EDE008CB670 /* CAMediaTimingFunction+F1AnimationTiming.swift in Sources */,
