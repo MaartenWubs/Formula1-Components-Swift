@@ -98,7 +98,8 @@ public class F1SideSkirtsView: UIControl {
     public var titleFont: UIFont?
     
     /// The shape generator used to define the side skirt's shape.
-    public var shapeGenerator: F1ShapeGenerating?
+    //public var shapeGenerator: F1ShapeGenerating?
+    // TODO: 
     
     /// The corner radius for the side skirt.
     ///
