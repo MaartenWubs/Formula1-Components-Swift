@@ -316,3 +316,20 @@ public class F1SideSkirtsView: UIControl {
     public func setTitleColor(_ color: UIColor?, for state: UIControl.State) { }
     
 }
+
+extension F1SideSkirtsView: F1Elevatable {
+    public var f1_currentElevation: CGFloat {
+        return _currentElevation
+    }
+    
+    public var f1_elevationDidChange: ((F1Elevatable, CGFloat) -> Void)? {
+        return nil
+    }
+  
+}
+
+extension F1SideSkirtsView: F1ElevationOverriding {
+    public var f1_overrideBaseElevation: CGFloat {
+        return 0.0
+    }
+}
