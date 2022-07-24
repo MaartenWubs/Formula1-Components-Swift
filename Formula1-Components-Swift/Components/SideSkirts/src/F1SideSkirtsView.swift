@@ -154,6 +154,7 @@ public class F1SideSkirtsView: UIControl {
     var _titleColors: [NSNumber : UIColor]?
     
     var _titleFont: UIFont?
+    var shapedLayer: F1ShapeMediator?
     
     var _f1_adjustsFontForContentSizeCategory: Bool = false
     var _currentElevation: CGFloat = 0.0
@@ -198,7 +199,13 @@ public class F1SideSkirtsView: UIControl {
     ///
     ///  - Parameter state: The control state.
     ///  - Return: The background color.
-    public func backgroundColor(for state: UIControl.State) -> UIColor? { return nil }
+    public func backgroundColor(for state: UIControl.State) -> UIColor? {
+        var backgroundColor = _backgroundColors?[NSNumber(value: state.rawValue)]
+        if backgroundColor == nil && state != .normal {
+            backgroundColor = _backgroundColors?[NSNumber(value: UIControl.State.normal.rawValue)]
+        }
+        return backgroundColor
+    }
     
     /// A color used as the side skirt's `backgroundColor`
     ///
@@ -206,7 +213,13 @@ public class F1SideSkirtsView: UIControl {
     ///
     /// - Parameter backgroundColor: The background color.
     /// - Parameter state: The control state.
-    public func setBackgroundColor(_ background: UIColor?, for state: UIControl.State) { }
+    public func setBackgroundColor(_ backgroundColor: UIColor?, for state: UIControl.State) {
+        if _backgroundColors == nil {
+            _backgroundColors = [:]
+        }
+        _backgroundColors?[NSNumber(value: state.rawValue)] = backgroundColor
+        updateBackgroundColor()
+    }
     
     /// Returns the border color for a particular control state.
     ///
@@ -332,5 +345,17 @@ extension F1SideSkirtsView: F1Elevatable {
 extension F1SideSkirtsView: F1ElevationOverriding {
     public var f1_overrideBaseElevation: CGFloat {
         return 0.0
+    }
+}
+
+extension F1SideSkirtsView {
+    // MARK: - Private methods
+    
+    func updateBackgroundColor() {
+        if qEnablePerformantShadow {
+            shapedLayer?.shapedBorderColor = borderColor(for: state)
+        } else {
+            // TODO: layer needs shapedBorderColor
+        }
     }
 }
