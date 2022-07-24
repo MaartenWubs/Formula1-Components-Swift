@@ -10,6 +10,16 @@ import UIKit
 
 // TODO: [f1p040ac644-progressView]
 
+// MARK: - Global properties
+
+let F1ProgressViewDefaultColor: UIColor = {
+    return .blue    //TODO: Use palatte blue color with tint500
+                    // Color still needs to be made. Return default
+                    // blue for now.
+}()
+let F1ProgressViewTrackColorDesaturation: CGFloat = 0.3
+let F1ProgressViewAnimationDuration: TimeInterval = 0.25
+
 /// The mode the progress bar is in.
 public enum F1ProgressViewMode {
     
@@ -34,6 +44,8 @@ public enum F1ProgressViewBackwardsAnimationMode {
 /// A linear determinate progress view.
 @IBDesignable
 public class F1ProgressView: UIView {
+    
+    // MARK: - Public properties
     
     /// The color shown fo the portion of the progress view that is filled.
     public var progressTintColor: UIColor?
@@ -83,4 +95,74 @@ public class F1ProgressView: UIView {
     /// When animating progress which is lower than the current progress value, this mode
     /// will determine which animation to use. The default is `F1ProgressViewBackwardsAnimationMode.reset`.
     public var backwardProgressAnimationmode: F1ProgressViewBackwardsAnimationMode = .reset
+    
+    // MARK: - Init
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonF1ProgressViewInit()
+    }
+    
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonF1ProgressViewInit()
+    }
+    
+    func commonF1ProgressViewInit() {}
+    
+    // MARK: - UIView
+    
+    public override func willMove(toSuperview newSuperview: UIView?) {}
+    
+    public override func layoutSubviews() {}
+    
+    // MARK: - Public Methods
+    
+    /// Adjusts the current progress, optionally animating the change.
+    ///
+    /// - Parameter progress: The progress to set.
+    /// - Parameter animated: Whether the change should be animated.
+    /// - Parameter completion: The completion executes at the end of the animation.
+    public func setProgress(_ progress: Float, animated: Bool, completion: @escaping () -> Void) {}
+    
+    /// Changes the hidden state, optionally animating the change.
+    ///
+    /// - Parameter hidden: The hidden state to set.
+    /// - Parameter animated: Whether the change should be animated.
+    /// - Parameter completion: The completion executes at the end of the animation.
+    public func setHidden(_ hidden: Bool, animated: Bool, completion: @escaping () -> Void) {}
+    
+    /// Start the progress bar's indeterminate animation.
+    public func startAnimating() {}
+    
+    /// Stop the progress bar's indeterminate animation.
+    public func stopAnimating() {}
+    
+    // MARK: - Accessibility
+    
+    public func accessibilityProgressView() -> UIProgressView { return UIProgressView() }
+    
+    public override class func accessibilityValue() -> String? { return "" }
+    
+    public func accessibilityDidChange() {}
+    
+    public func announceAccessibilityValueChange() {}
+    
+    public override class func accessibilityLabel() -> String? { return "" }
+    
+    // MARK: - Private methods
+    
+    func animationDuration() -> TimeInterval { return 0.0 }
+    
+    func animationOptions() -> UIView.AnimationOptions { return .allowAnimatedContent }
+    
+    func defaultTrackTintColor(for progress: UIColor) -> UIColor { return .clear }
+    
+    func updateProgressView() {}
+    
+    func updateIndeterminateProgressView() {}
+    
+    func updateTrackView() {}
+    
+    func startAnimatingBar() {}
 }

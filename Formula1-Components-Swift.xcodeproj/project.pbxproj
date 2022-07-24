@@ -216,6 +216,14 @@
 			path = private;
 			sourceTree = "<group>";
 		};
+		32447959288A83D2008E9FCD /* private */ = {
+			isa = PBXGroup;
+			children = (
+				3244795A288A83E5008E9FCD /* CGRect+SideSkirt.swift */,
+			);
+			path = private;
+			sourceTree = "<group>";
+		};
 		32A04C6F28888EB8008CB670 = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +589,7 @@
 			isa = PBXGroup;
 			children = (
 				32A04CC028888EDE008CB670 /* F1ShapedView.swift */,
+				324479572889E1AE008E9FCD /* F1ShapeGenerating.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1037,6 +1046,7 @@
 		32A04D2228888EDE008CB670 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				32447959288A83D2008E9FCD /* private */,
 				32A04D2328888EDE008CB670 /* F1SideSkirtsView.swift */,
 			);
 			path = src;
@@ -1330,6 +1340,7 @@
 				32A04D4128888EDE008CB670 /* F1SliderColorThemer.swift in Sources */,
 				32A04D4F28888EDE008CB670 /* F1NavigationBoxController.swift in Sources */,
 				32A04D7628888EDE008CB670 /* F1TonalPalette.swift in Sources */,
+				324479582889E1AE008E9FCD /* F1ShapeGenerating.swift in Sources */,
 				32A04D5728888EDE008CB670 /* F1SegmentedControl.swift in Sources */,
 				32A04D5028888EDE008CB670 /* UIColor+Formula1Blending.swift in Sources */,
 				32A04D5B28888EDE008CB670 /* F1ActivityIndicator.swift in Sources */,
@@ -1343,6 +1354,7 @@
 				32A04D4828888EDE008CB670 /* F1RippleViewDelegate.swift in Sources */,
 				32A04D6C28888EDE008CB670 /* F1MessageBarMessageInternal.swift in Sources */,
 				32A04D7028888EDE008CB670 /* CAMediaTimingFunction+F1AnimationTiming.swift in Sources */,
+				3244795B288A83E5008E9FCD /* CGRect+SideSkirt.swift in Sources */,
 				32A04D7828888EDE008CB670 /* F1BannerView.swift in Sources */,
 				32A04D6D28888EDE008CB670 /* F1MessageBarMessageView.swift in Sources */,
 				32A04D3628888EDE008CB670 /* F1InkView.swift in Sources */,
