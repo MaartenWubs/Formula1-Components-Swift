@@ -10,4 +10,20 @@ import UIKit
 
 // TODO: [f1t40204902312-textFields]
 
-public class F1TextField: UITextField {}
+public class F1TextField: UITextField {
+    
+    var _cursorColor: UIColor?
+    var _inputLayoutStrut: UILabel?
+    
+    var _fundament: F1TextInputCommonFundament!
+    public var fundament: F1TextInputCommonFundament {
+        get { return _fundament }
+        set { _fundament = newValue }
+    }
+    
+    var _underlineY: NSLayoutConstraint!
+    public var underlineY: NSLayoutConstraint {
+        get { return _underlineY }
+        set { _underlineY = newValue}
+    }
+}

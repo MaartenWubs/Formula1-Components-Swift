@@ -15,6 +15,7 @@
 		32447961288DB0E3008E9FCD /* F1ShapeMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32447960288DB0E3008E9FCD /* F1ShapeMediator.swift */; };
 		32447963288DDBCE008E9FCD /* F1ShapeGenerating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32447962288DDBCE008E9FCD /* F1ShapeGenerating.swift */; };
 		32447965288DE413008E9FCD /* F1ShapedShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32447964288DE413008E9FCD /* F1ShapedShadowLayer.swift */; };
+		3244796A288EE542008E9FCD /* F1TextInputCommonFundament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32447969288EE542008E9FCD /* F1TextInputCommonFundament.swift */; };
 		32A04C7D28888EB8008CB670 /* Formula1_Components_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A04C7C28888EB8008CB670 /* Formula1_Components_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32A04D3328888EDE008CB670 /* F1TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04C8628888EDE008CB670 /* F1TabBarView.swift */; };
 		32A04D3428888EDE008CB670 /* F1ScalableFontDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A04C8928888EDE008CB670 /* F1ScalableFontDescriptor.swift */; };
@@ -112,6 +113,7 @@
 		32447960288DB0E3008E9FCD /* F1ShapeMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1ShapeMediator.swift; sourceTree = "<group>"; };
 		32447962288DDBCE008E9FCD /* F1ShapeGenerating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1ShapeGenerating.swift; sourceTree = "<group>"; };
 		32447964288DE413008E9FCD /* F1ShapedShadowLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1ShapedShadowLayer.swift; sourceTree = "<group>"; };
+		32447969288EE542008E9FCD /* F1TextInputCommonFundament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1TextInputCommonFundament.swift; sourceTree = "<group>"; };
 		32A04C7928888EB8008CB670 /* Formula1_Components_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Formula1_Components_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A04C7C28888EB8008CB670 /* Formula1_Components_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Formula1_Components_Swift.h; sourceTree = "<group>"; };
 		32A04C8628888EDE008CB670 /* F1TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F1TabBarView.swift; sourceTree = "<group>"; };
@@ -225,6 +227,14 @@
 		32447959288A83D2008E9FCD /* private */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = private;
+			sourceTree = "<group>";
+		};
+		32447968288EE521008E9FCD /* private */ = {
+			isa = PBXGroup;
+			children = (
+				32447969288EE542008E9FCD /* F1TextInputCommonFundament.swift */,
 			);
 			path = private;
 			sourceTree = "<group>";
@@ -431,6 +441,7 @@
 		32A04C9A28888EDE008CB670 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				32447968288EE521008E9FCD /* private */,
 				32A04C9B28888EDE008CB670 /* F1TextField.swift */,
 			);
 			path = src;
@@ -1357,6 +1368,7 @@
 				32390F7C2888998E0021B2CC /* F1ActivityIndicatorState.swift in Sources */,
 				32A04D6F28888EDE008CB670 /* F1PageControl.swift in Sources */,
 				3244795F288D88B5008E9FCD /* F1AlertAction.swift in Sources */,
+				3244796A288EE542008E9FCD /* F1TextInputCommonFundament.swift in Sources */,
 				32A04D4928888EDE008CB670 /* F1RipplePendingAnimation.swift in Sources */,
 				32A04D3828888EDE008CB670 /* F1CollectionVieCell.swift in Sources */,
 				3244795D288D41CC008E9FCD /* F1AlertControllerDelegate.swift in Sources */,
