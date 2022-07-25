@@ -55,7 +55,18 @@ public class F1SideSkirtsView: UIControl {
     ///A UIView that trails the title label.
     ///
     ///It will be given a size based on the value returned from `sizeThatFits()`
-    public var accessoryView: UIView?
+    public var accessoryView: UIView? {
+        get {
+            _accssoryView
+        }
+        set(accessoryView) {
+            _accssoryView?.removeFromSuperview()
+            _accssoryView = accessoryView
+            if let accessoryView = accessoryView {
+                insertSubview(accessoryView, aboveSubview: titleLabel)
+            }
+        }
+    }
     
     /// The title label.
     ///
@@ -95,11 +106,18 @@ public class F1SideSkirtsView: UIControl {
     /// Font used to render the title.
     ///
     /// If nil, the side skirt will use the system font.
-    public var titleFont: UIFont?
+    public var titleFont: UIFont? {
+        get {
+            return _titleFont
+        }
+        set(titleFont) {
+            _titleFont = titleFont
+            updateTitleFont()
+        }
+    }
     
     /// The shape generator used to define the side skirt's shape.
-    //public var shapeGenerator: F1ShapeGenerating?
-    // TODO: 
+    public var shapeGenerator: F1ShapeGenerating?
     
     /// The corner radius for the side skirt.
     ///
@@ -132,7 +150,7 @@ public class F1SideSkirtsView: UIControl {
     // MARK: - Private properties
     
     var contentRect: CGRect = .zero
-    //var layer: F1ShapedShadowLayer // TODO: make F1ShapedShadowLayer
+    var ssLayer: F1ShapedShadowLayer?
     var showImageView: Bool = false
     var showSelectedImageView: Bool = false
     var showAccessoryView: Bool = false
@@ -158,6 +176,8 @@ public class F1SideSkirtsView: UIControl {
     
     var _f1_adjustsFontForContentSizeCategory: Bool = false
     var _currentElevation: CGFloat = 0.0
+    
+    var _accssoryView: UIView?
     
     // MARK: - Init
     
@@ -355,7 +375,9 @@ extension F1SideSkirtsView {
         if qEnablePerformantShadow {
             shapedLayer?.shapedBorderColor = borderColor(for: state)
         } else {
-            // TODO: layer needs shapedBorderColor
+            // TODO: layer needs to be uncommended
         }
     }
+    
+    func updateTitleFont() {}
 }

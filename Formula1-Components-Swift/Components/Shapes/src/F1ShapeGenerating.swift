@@ -1,11 +1,13 @@
 //
-//  F1ShapeGenerator.swift
+//  F1ShapeGenerating.swift
 //  Formula1-Components-Swift
 //
-//  Created by Maarten Wubs on 7/21/22.
+//  Created by Maarten Wubs on 7/24/22.
 //
 
 import Foundation
-import CoreGraphics
+import UIKit
 
-public protocol F1ShapeGenerating {}
+public protocol F1ShapeGenerating: NSCopying {
+    func path(for size: CGSize) -> CGPath?
+}
