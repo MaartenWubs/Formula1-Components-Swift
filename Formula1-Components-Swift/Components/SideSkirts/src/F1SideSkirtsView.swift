@@ -24,8 +24,6 @@ let F1SideSkirtImagePadding: UIEdgeInsets = .init(top: 0, left: 0, bottom: 0, ri
 let F1SideSkirtTitlePadding: UIEdgeInsets = .init(top: 3, left: 8, bottom: 4, right: 8)
 let F1SideSkirtAccessoryPadding: UIEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
 
-let qEnablePerformantShadow = false
-
 let kKVOContextF1SideSkirtView = ("kKVOContextF1SideSkirtView" as NSString).utf8String
 
 /// Side skirts are compact elemets that represent an attribute, text, enity, or action.
@@ -178,6 +176,8 @@ public class F1SideSkirtsView: UIControl {
     var _currentElevation: CGFloat = 0.0
     
     var _accssoryView: UIView?
+    
+    var qEnablePerformantShadow = false
     
     // MARK: - Init
     
