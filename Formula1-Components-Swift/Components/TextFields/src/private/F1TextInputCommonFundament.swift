@@ -8,4 +8,4 @@
 import Foundation
 import UIKit
 
-public class F1TextInputCommonFundament: NSObject {}
+class F1TextInputCommonFundament: NSObject {}
