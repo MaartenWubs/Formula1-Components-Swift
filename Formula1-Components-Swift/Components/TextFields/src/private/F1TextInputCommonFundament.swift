@@ -8,6 +8,34 @@
 import Foundation
 import UIKit
 
+let F1TextInputClearButtonTouchTargetSize: CGFloat = 48
+
+class F1TextInputClearButton: UIButton {
+    
+    public var minimumTouchTargetInsets: UIEdgeInsets = .init()
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let width: CGFloat = self.bounds.size.width
+        let height: CGFloat = self.bounds.size.height
+        let verticalInsets: CGFloat = min(0, -(F1TextInputClearButtonTouchTargetSize - height) / 2)
+        let horizontalInsets: CGFloat = min(0, -(F1TextInputClearButtonTouchTargetSize - width) / 2)
+        self.minimumTouchTargetInsets = .init(top: verticalInsets,
+                                              left: horizontalInsets,
+                                              bottom: verticalInsets,
+                                              right: horizontalInsets)
+    }
+    
+    // TODO
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if self.minimumTouchTargetInsets == UIEdgeInsets.zero {
+            return true
+        }
+        return false
+    }
+}
+
 class F1TextInputCommonFundament: NSObject {
     
     // MARK: - Public properties
