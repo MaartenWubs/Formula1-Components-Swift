@@ -37,6 +37,8 @@ enum F1NavigationBarTitleViewLayoutBehavior {
     case centerFit
 }
 
+/// This protocol defines all of the properties in `UINavigtionItem` that can be listened to by
+/// `F1NavigationBar`.
 protocol F1UINavigationItemObservables: NSObject {
     
     var title: String? { get }
@@ -50,10 +52,59 @@ protocol F1UINavigationItemObservables: NSObject {
     
 }
 
+/// The `F1NavigationBar` class is a view consisting of a leading and trailing button bar, title label,
+/// and an optional title view.
 class F1NavigationBarTextColorAccessibilityMutator: NSObject {
     override init() { }
     
-    public func mutate(_ navBar: F1NavigationBar) { }
+    public func mutate(_ navBar: F1NavigationBar) {
+        let backgroundColor: UIColor? = navBar.backgroundColor
+        if backgroundColor == nil {
+            return
+        }
+    }
 }
 
-public class F1NavigationBar: UIView {}
+class F1NavigationBarSandbagView: UIView { }
+
+public class F1NavigationBar: UIView {
+    
+    private var _observedNavigationItem: UINavigationItem!
+    private var _inkColor: UIColor!
+    private var _titleLabel: UILabel!
+    private var _leadingButtonLane: F1ButtonLane!
+    private var _trailingButtonBar: F1ButtonLane!
+    private var _titleInsetsAreExplicit: Bool = false
+    private var _watchingViewController: UIViewController!
+    private var _titleView: UIView!
+    
+    public var title: String?
+    public var titleView: UIView? {
+        get { return _titleView }
+        set {
+            if _observedNavigationItem.titleView is F1NavigationBarSandbagView {
+                return
+            }
+            
+            if newValue != nil {
+                _observedNavigationItem.titleView = F1NavigationBarSandbagView()
+            } else if _observedNavigationItem.titleView != nil {
+                _observedNavigationItem.titleView = nil
+            }
+            
+            if self.titleView != titleView {
+                self.titleView?.removeFromSuperview()
+                _titleView = titleView
+            }
+            
+            if _titleView != nil {
+                self.addSubview(_titleView)
+            }
+            
+            _titleLabel.isHidden = _titleView != nil
+            self.setNeedsLayout()
+        }
+    }
+    
+    public var titleTextAttributes: NSDictionary?
+}

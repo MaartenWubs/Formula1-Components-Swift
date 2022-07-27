@@ -10,4 +10,4 @@ import UIKit
 
 // TODO: [f1b110df94- bottomLane]
 
-public class F1BottomLane: UIView {}
+public class F1ButtonLane: UIView {}
