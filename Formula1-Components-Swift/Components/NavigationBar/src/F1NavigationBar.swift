@@ -22,7 +22,7 @@ enum F1NavigationBatTitleAlignment {
 }
 
 /// Behaviors that affect the layout of an `F1NavigationBar` title view.
-enum F1NavigationBarTitleViewLayoutBehavior {
+public enum F1NavigationBarTitleViewLayoutBehavior {
     /// The title view's width will equal the navigation bar's width minus any space consumed by the
     /// leading and trailing buttons
     ///
@@ -103,6 +103,38 @@ public class F1NavigationBar: UIView {
             
             _titleLabel.isHidden = _titleView != nil
             self.setNeedsLayout()
+        }
+    }
+    
+    private var _titleViewLayoutBehavior: F1NavigationBarTitleViewLayoutBehavior!
+    public var titleViewLayoutBehavior: F1NavigationBarTitleViewLayoutBehavior {
+        get { return _titleViewLayoutBehavior }
+        set { _titleViewLayoutBehavior = newValue }
+    }
+    
+    private var _titleFont: UIFont!
+    public var titleFont: UIFont {
+        get { return _titleFont}
+        set {
+            if self.allowAnyTitleFontSize {
+                _titleFont = newValue
+            }
+        }
+    }
+    
+    public var allowAnyTitleFontSize: Bool = true
+    public var titleTextColor: UIColor?
+    private var _rippleColor: UIColor?
+    public var rippleColor: UIColor {
+        get { return _rippleColor! }
+        set {
+            if _rippleColor == newValue || _rippleColor!.isEqual(newValue) {
+                return
+            }
+            _rippleColor = newValue
+            
+            _leadingButtonLane.rippleColor = newValue
+            _trailingButtonBar.rippleColor = newValue
         }
     }
     

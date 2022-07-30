@@ -10,4 +10,6 @@ import UIKit
 
 // TODO: [f1b110df94- bottomLane]
 
-public class F1ButtonLane: UIView {}
+public class F1ButtonLane: UIView {
+    public var rippleColor: UIColor?
+}
